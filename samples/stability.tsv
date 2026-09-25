@@ -1,0 +1,3 @@
+名	数据A	数据B	盐值	比例	期望
+05-append	data/05-base.tsv	data/05-append.tsv	s-05	70:20:10	expected/05-append.stability.txt
+06-drop	data/06-full.tsv	data/06-dropped.tsv	s-06-02	75:15:10	expected/06-drop.stability.txt

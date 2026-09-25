@@ -1,0 +1,10 @@
+名	数据	盐值	比例	映射期望	统计期望
+01-balanced	data/01-balanced.tsv	s-01	80:10:10	expected/01-balanced.map.tsv	expected/01-balanced.stats.txt
+02-skewed	data/02-skewed.tsv	s-02-01	80:10:10	expected/02-skewed.map.tsv	expected/02-skewed.stats.txt
+03-long-tail	data/03-long-tail.tsv	s-03	90:5:5	expected/03-long-tail.map.tsv	expected/03-long-tail.stats.txt
+04-dup-keys	data/04-dup-keys.tsv	s-04-08	80:10:10	expected/04-dup-keys.map.tsv	expected/04-dup-keys.stats.txt
+05-base	data/05-base.tsv	s-05	70:20:10	expected/05-base.map.tsv	expected/05-base.stats.txt
+05-append	data/05-append.tsv	s-05	70:20:10	expected/05-append.map.tsv	expected/05-append.stats.txt
+06-full	data/06-full.tsv	s-06-02	75:15:10	expected/06-full.map.tsv	expected/06-full.stats.txt
+06-dropped	data/06-dropped.tsv	s-06-02	75:15:10	expected/06-dropped.map.tsv	expected/06-dropped.stats.txt
+07-scale	data/07-scale.tsv	s-07	80:10:10	-	expected/07-scale.stats.txt

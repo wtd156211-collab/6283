@@ -1,0 +1,7 @@
+total	300	300
+split	train	245	81.6667%
+split	valid	26	8.6667%
+split	test	29	9.6667%
+category	冷门	30	24	2	4
+category	垂类	60	50	2	8
+category	大众	210	171	22	17

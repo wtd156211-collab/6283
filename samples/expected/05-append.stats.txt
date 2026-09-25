@@ -1,0 +1,7 @@
+total	250	250
+split	train	171	68.4000%
+split	valid	55	22.0000%
+split	test	24	9.6000%
+category	丙	83	53	19	11
+category	乙	83	60	17	6
+category	甲	84	58	19	7

@@ -1,0 +1,8 @@
+total	200	200
+split	train	161	80.5000%
+split	valid	21	10.5000%
+split	test	18	9.0000%
+category	新闻	50	39	6	5
+category	视频	50	42	4	4
+category	论坛	50	39	6	5
+category	问答	50	41	5	4

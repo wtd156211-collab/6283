@@ -1,0 +1,8 @@
+total	120	36
+split	train	98	81.6667%
+split	valid	10	8.3333%
+split	test	12	10.0000%
+category	丁	29	25	0	4
+category	丙	31	31	0	0
+category	乙	30	20	6	4
+category	甲	30	22	4	4
