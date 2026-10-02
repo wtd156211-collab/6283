@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>稳定数据划分报告</title>
+<style>
+body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;margin:2em auto;max-width:960px;color:#222}
+h1{border-bottom:3px solid #2c6fbb;padding-bottom:.3em}
+h2{margin-top:2em;border-bottom:1px solid #ccc;padding-bottom:.2em}
+table{border-collapse:collapse;margin:.6em 0}
+th,td{border:1px solid #bbb;padding:.3em .8em;text-align:right}
+th:first-child,td:first-child{text-align:left}
+tr:nth-child(even){background:#f4f7fb}
+.bar{background:#e3e8ef;border-radius:3px;height:1em;width:240px;display:inline-block;vertical-align:middle}
+.fill{background:#2c6fbb;height:100%;border-radius:3px}
+.pass{color:#1a7f37;font-weight:bold}
+.fail{color:#c0392b;font-weight:bold}
+.summary td{text-align:left}
+.mono{font-family:Consolas,monospace}
+</style>
+</head>
+<body>
+<h1>稳定数据划分报告</h1>
+<table class="summary"><tr><th>样例数</th><td>9（另有 2 组稳定性对）</td></tr><tr><th>总行数</th><td>401702</td></tr><tr><th>通过数</th><td>11 / 11</td></tr></table>
+<h2>01-balanced</h2>
+<p>行数 200 ｜ 唯一键 200 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>161</td><td class="mono">80.5000%</td><td><span class="bar"><span class="fill" style="width:80.5000%"></span></span></td></tr>
+<tr><td>valid</td><td>21</td><td class="mono">10.5000%</td><td><span class="bar"><span class="fill" style="width:10.5000%"></span></span></td></tr>
+<tr><td>test</td><td>18</td><td class="mono">9.0000%</td><td><span class="bar"><span class="fill" style="width:9.0000%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>新闻</td><td>50</td><td>39</td><td>6</td><td>5</td></tr>
+<tr><td>视频</td><td>50</td><td>42</td><td>4</td><td>4</td></tr>
+<tr><td>论坛</td><td>50</td><td>39</td><td>6</td><td>5</td></tr>
+<tr><td>问答</td><td>50</td><td>41</td><td>5</td><td>4</td></tr>
+</table>
+<h2>02-skewed</h2>
+<p>行数 300 ｜ 唯一键 300 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>245</td><td class="mono">81.6667%</td><td><span class="bar"><span class="fill" style="width:81.6667%"></span></span></td></tr>
+<tr><td>valid</td><td>26</td><td class="mono">8.6667%</td><td><span class="bar"><span class="fill" style="width:8.6667%"></span></span></td></tr>
+<tr><td>test</td><td>29</td><td class="mono">9.6667%</td><td><span class="bar"><span class="fill" style="width:9.6667%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>冷门</td><td>30</td><td>24</td><td>2</td><td>4</td></tr>
+<tr><td>垂类</td><td>60</td><td>50</td><td>2</td><td>8</td></tr>
+<tr><td>大众</td><td>210</td><td>171</td><td>22</td><td>17</td></tr>
+</table>
+<h2>03-long-tail</h2>
+<p>行数 200 ｜ 唯一键 200 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>176</td><td class="mono">88.0000%</td><td><span class="bar"><span class="fill" style="width:88.0000%"></span></span></td></tr>
+<tr><td>valid</td><td>12</td><td class="mono">6.0000%</td><td><span class="bar"><span class="fill" style="width:6.0000%"></span></span></td></tr>
+<tr><td>test</td><td>12</td><td class="mono">6.0000%</td><td><span class="bar"><span class="fill" style="width:6.0000%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>尾类-01</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-02</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>尾类-03</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-04</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-05</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-06</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-07</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-08</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-09</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-10</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-11</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-12</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-13</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-14</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-15</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-16</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-17</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-18</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-19</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-20</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-21</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-22</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-23</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-24</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-25</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-26</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-27</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-28</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-29</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-30</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-31</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-32</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-33</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-34</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-35</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-36</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-37</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-38</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-39</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-40</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-41</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-42</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>尾类-43</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-44</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-45</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-46</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-47</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>尾类-48</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-49</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-50</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-51</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>尾类-52</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-53</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>尾类-54</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-55</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-56</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-57</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-58</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-59</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-60</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-61</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-62</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-63</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-64</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>尾类-65</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-66</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-67</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-68</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-69</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-70</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-71</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-72</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-73</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-74</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-75</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-76</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-77</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-78</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-79</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-80</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-81</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>尾类-82</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-83</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-84</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-85</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-86</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-87</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>尾类-88</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-89</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>尾类-90</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>次热</td><td>40</td><td>37</td><td>2</td><td>1</td></tr>
+<tr><td>热门</td><td>70</td><td>57</td><td>5</td><td>8</td></tr>
+</table>
+<h2>04-dup-keys</h2>
+<p>行数 120 ｜ 唯一键 36 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>98</td><td class="mono">81.6667%</td><td><span class="bar"><span class="fill" style="width:81.6667%"></span></span></td></tr>
+<tr><td>valid</td><td>10</td><td class="mono">8.3333%</td><td><span class="bar"><span class="fill" style="width:8.3333%"></span></span></td></tr>
+<tr><td>test</td><td>12</td><td class="mono">10.0000%</td><td><span class="bar"><span class="fill" style="width:10.0000%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>丁</td><td>29</td><td>25</td><td>0</td><td>4</td></tr>
+<tr><td>丙</td><td>31</td><td>31</td><td>0</td><td>0</td></tr>
+<tr><td>乙</td><td>30</td><td>20</td><td>6</td><td>4</td></tr>
+<tr><td>甲</td><td>30</td><td>22</td><td>4</td><td>4</td></tr>
+</table>
+<h2>05-base</h2>
+<p>行数 200 ｜ 唯一键 200 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>145</td><td class="mono">72.5000%</td><td><span class="bar"><span class="fill" style="width:72.5000%"></span></span></td></tr>
+<tr><td>valid</td><td>39</td><td class="mono">19.5000%</td><td><span class="bar"><span class="fill" style="width:19.5000%"></span></span></td></tr>
+<tr><td>test</td><td>16</td><td class="mono">8.0000%</td><td><span class="bar"><span class="fill" style="width:8.0000%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>丙</td><td>66</td><td>45</td><td>14</td><td>7</td></tr>
+<tr><td>乙</td><td>67</td><td>50</td><td>12</td><td>5</td></tr>
+<tr><td>甲</td><td>67</td><td>50</td><td>13</td><td>4</td></tr>
+</table>
+<h2>05-append</h2>
+<p>行数 250 ｜ 唯一键 250 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>171</td><td class="mono">68.4000%</td><td><span class="bar"><span class="fill" style="width:68.4000%"></span></span></td></tr>
+<tr><td>valid</td><td>55</td><td class="mono">22.0000%</td><td><span class="bar"><span class="fill" style="width:22.0000%"></span></span></td></tr>
+<tr><td>test</td><td>24</td><td class="mono">9.6000%</td><td><span class="bar"><span class="fill" style="width:9.6000%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>丙</td><td>83</td><td>53</td><td>19</td><td>11</td></tr>
+<tr><td>乙</td><td>83</td><td>60</td><td>17</td><td>6</td></tr>
+<tr><td>甲</td><td>84</td><td>58</td><td>19</td><td>7</td></tr>
+</table>
+<h2>06-full</h2>
+<p>行数 240 ｜ 唯一键 240 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>178</td><td class="mono">74.1667%</td><td><span class="bar"><span class="fill" style="width:74.1667%"></span></span></td></tr>
+<tr><td>valid</td><td>36</td><td class="mono">15.0000%</td><td><span class="bar"><span class="fill" style="width:15.0000%"></span></span></td></tr>
+<tr><td>test</td><td>26</td><td class="mono">10.8333%</td><td><span class="bar"><span class="fill" style="width:10.8333%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>丁</td><td>60</td><td>46</td><td>8</td><td>6</td></tr>
+<tr><td>丙</td><td>60</td><td>45</td><td>7</td><td>8</td></tr>
+<tr><td>乙</td><td>60</td><td>45</td><td>11</td><td>4</td></tr>
+<tr><td>甲</td><td>60</td><td>42</td><td>10</td><td>8</td></tr>
+</table>
+<h2>06-dropped</h2>
+<p>行数 192 ｜ 唯一键 192 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>142</td><td class="mono">73.9583%</td><td><span class="bar"><span class="fill" style="width:73.9583%"></span></span></td></tr>
+<tr><td>valid</td><td>33</td><td class="mono">17.1875%</td><td><span class="bar"><span class="fill" style="width:17.1875%"></span></span></td></tr>
+<tr><td>test</td><td>17</td><td class="mono">8.8542%</td><td><span class="bar"><span class="fill" style="width:8.8542%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>丁</td><td>48</td><td>34</td><td>8</td><td>6</td></tr>
+<tr><td>丙</td><td>48</td><td>37</td><td>6</td><td>5</td></tr>
+<tr><td>乙</td><td>48</td><td>37</td><td>11</td><td>0</td></tr>
+<tr><td>甲</td><td>48</td><td>34</td><td>8</td><td>6</td></tr>
+</table>
+<h2>07-scale</h2>
+<p>行数 400000 ｜ 唯一键 400000 ｜ 核对结论：<span class="pass">通过</span></p>
+<table><tr><th>份</th><th>行数</th><th>占比</th><th>占比条</th></tr>
+<tr><td>train</td><td>320038</td><td class="mono">80.0095%</td><td><span class="bar"><span class="fill" style="width:80.0095%"></span></span></td></tr>
+<tr><td>valid</td><td>40063</td><td class="mono">10.0158%</td><td><span class="bar"><span class="fill" style="width:10.0158%"></span></span></td></tr>
+<tr><td>test</td><td>39899</td><td class="mono">9.9748%</td><td><span class="bar"><span class="fill" style="width:9.9748%"></span></span></td></tr>
+</table>
+<table><tr><th>类别</th><th>总行数</th><th>train</th><th>valid</th><th>test</th></tr>
+<tr><td>alpha</td><td>180000</td><td>144028</td><td>18099</td><td>17873</td></tr>
+<tr><td>beta</td><td>100000</td><td>80085</td><td>9935</td><td>9980</td></tr>
+<tr><td>delta</td><td>40000</td><td>31979</td><td>4004</td><td>4017</td></tr>
+<tr><td>epsilon</td><td>20000</td><td>16025</td><td>1951</td><td>2024</td></tr>
+<tr><td>gamma</td><td>60000</td><td>47921</td><td>6074</td><td>6005</td></tr>
+</table>
+<h2>05-append（稳定性）</h2>
+<p>核对结论：<span class="pass">通过</span> ｜ 追加/删除前后已有记录的归属变化数：0</p>
+<table><tr><th>指标</th><th>实际</th><th>期望</th></tr><tr><td>保留键</td><td>185</td><td>185</td></tr><tr><td>只在A</td><td>15</td><td>15</td></tr><tr><td>只在B</td><td>65</td><td>65</td></tr><tr><td>归属变化</td><td>0</td><td>0</td></tr></table>
+<h2>06-drop（稳定性）</h2>
+<p>核对结论：<span class="pass">通过</span> ｜ 追加/删除前后已有记录的归属变化数：0</p>
+<table><tr><th>指标</th><th>实际</th><th>期望</th></tr><tr><td>保留键</td><td>192</td><td>192</td></tr><tr><td>只在A</td><td>48</td><td>48</td></tr><tr><td>只在B</td><td>0</td><td>0</td></tr><tr><td>归属变化</td><td>0</td><td>0</td></tr></table>
+</body>
+</html>
